@@ -9,6 +9,7 @@
 
 		<style>		/* Schrijf hier gewoon je CSS voor dit component */
 
+			/* de "normale" / dichtgeklapte versie van de vraag. */
 			details summary{
 				border-radius: .6em;
 				padding: .8em;
@@ -20,11 +21,13 @@
 				background-color: transparent;
 			}
 
+			/* de opengeklapte versie van de vraag, code alleen nodig voor wat er veranderd. */
 			details[open] summary {
 				border-radius: .6em .6em 0em 0em;
 				border: transparent;
 			}
 
+			/* de verschillende kleuren, kan vast makkelijker. Maar het werkt. */
 			.summary1 {
 				background-color: var(--yellow);
 			}
@@ -46,7 +49,7 @@
 					background-color: var(--green);
 				}
 
-			
+			/* de opengeklapte versie van de tekst die hij laat zien als je de summary openklapt. */
 			details[open] div {
 				border-radius: 0em .6em .6em .6em;
 				padding: .8em;
@@ -64,8 +67,12 @@
 
 		<!-- Content (waar nog wat HTML omheen moet 😄):-->
 
+
+		<!-- Met de name tag, zorg je ervoor dat je op de browser 1 detail kopje tegelijk open geklapt kan hebben. -->
 		<details name="faq">
+			<!-- Met een <summary> zorg je ervoor dat er een stukje tekst uitklapbaar is. -->
 			<summary class="summary1" >Wat is frontend development?</summary>
+			<!-- Deze div laat je zien als de details[open] is. -->
 			<div class="div1">
 				<p>
 					Een frontend developer ontwerpt en bouwt websites in HTML, CSS en JavaScript. Deze frontend talen leer je bij ons, je hebt dus geen voorkennis nodig. 
@@ -82,7 +89,7 @@
 			</div>
 		</details>
 
-		<details name="faq">
+		<details name="faq"> 
 			<summary class="summary3">Wat is een Associate Degree?</summary>
 			<div class="div3">
 				<p>
