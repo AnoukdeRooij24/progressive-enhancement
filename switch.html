@@ -8,10 +8,55 @@
 		<link href="assets/styles.css" rel="stylesheet">
 		<style>
 			/* Schrijf hier gewoon je CSS voor dit component */
-
 			/* Hint: Dit component kun je volledig met HTML en CSS bouwen */
-
 			/* Hint: Hoe ver ga je qua styling? Vraag jezelf dit altijd af */
+
+			label {
+				display:inline-flex;
+				align-items:center;
+				gap:.25em;
+
+				
+				cursor:pointer;
+			}
+
+			input{
+				appearance:none;
+				width:6em;
+				aspect-ratio:2/1;
+				background-color:var(--purple);
+				border-radius:3em;
+				font:inherit;
+				cursor:pointer;
+			}
+
+
+			input::after{
+				content:"👎";
+				display:grid;
+				place-items:center;
+				width:3em;
+				aspect-ratio:1;
+				background-color:var(--purple);
+				border-radius:inherit;
+				
+				transition:.3s;
+			}
+
+			input:checked::after {
+				content:"👍";
+				background-color:var(--green);
+				translate:3em;
+			}
+
+			input:checked {
+				background-color: var(--green);
+			}
+
+
+
+
+
 		</style>
 	</head>
 	<body>
@@ -19,8 +64,11 @@
 		
 		<!-- Hint: Safari heeft hiervoor iets bedacht, maar is dat al een standaard?
 		     Wat gebeurt er in browsers die dat nog niet ondersteunen? -->
+			 <label>
+				<input type="checkbox" switch>
+			</label> 
 
-		<details open>
+		<details>
 			<summary>Demo video</summary>
 			<video src="assets/switch.mp4" width="119" height="67" controls muted autoplay loop>
 				<a href="assets/switch.mp4">assets/switch.mp4</a>
